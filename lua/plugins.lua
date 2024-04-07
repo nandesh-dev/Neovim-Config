@@ -7,16 +7,11 @@ local plugins = {
     end
   },
   {
-    'justinmk/vim-sneak',
-    config = function ()
-      -- Set the label for sneak
-      vim.g["sneak#label"] = 1
-
-      -- Map 'f' to <Plug>Sneak_s
-      vim.api.nvim_set_keymap('n', 'f', '<Plug>Sneak_s', { noremap = true })
-
-      -- Map 'F' to <Plug>Sneak_S
-      vim.api.nvim_set_keymap('n', 'F', '<Plug>Sneak_S', { noremap = true })
+    'ggandor/leap.nvim',
+    dependencies = { 'tpope/vim-repeat' },
+    config = function()
+      vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap)')
+      vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
     end
   },
   {
