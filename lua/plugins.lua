@@ -196,6 +196,10 @@ local plugins = {
       })
     end
   },
+  {
+    'Exafunction/codeium.vim',
+    event = 'BufEnter'
+  }
 }
 
 return plugins
