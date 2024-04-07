@@ -7,6 +7,12 @@ local plugins = {
     end
   },
   {
+    'arnamak/stay-centered.nvim',
+    config = function()
+      require('stay-centered').setup()
+    end
+  },
+  {
     'ggandor/leap.nvim',
     dependencies = { 'tpope/vim-repeat' },
     config = function()
