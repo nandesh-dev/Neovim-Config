@@ -203,7 +203,7 @@ local plugins = {
   {
     'sbdchd/neoformat',
     config = function()
-        vim.cmd('let g:neoformat_enabled_prettier = ["javascript", "typescript", "javascriptreact", "typescriptreact", "css", "json", "scss", "markdown", "html"]')
+        vim.cmd('let g:neoformat_enabled_prettier = ["javascript", "typescript", "javascriptreact", "typescriptreact", "css", "json", "scss", "markdown", "html", "lua"]')
 
         vim.cmd([[
         augroup fmt
@@ -239,6 +239,27 @@ local plugins = {
       line_number_text    = "Line %s out of %s",        -- Format string rendered when `enable_line_number` is set to true (either string or function(line_number: number, line_count: number): string)
   })
   end
+  },
+  {
+    'windwp/nvim-ts-autotag',
+    config = function ()
+      require('nvim-ts-autotag').setup({
+        opts = {
+          -- Defaults
+          enable_close = true, -- Auto close tags
+          enable_rename = true, -- Auto rename pairs of tags
+          enable_close_on_slash = false -- Auto close on trailing </
+        },
+        -- Also override individual filetype configs, these take priority.
+        -- Empty by default, useful if one of the "opts" global settings
+        -- doesn't work well in a specific filetype
+        per_filetype = {
+          ["html"] = {
+            enable_close = false
+          }
+        }
+      })
+    end
   }
 }
 
