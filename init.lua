@@ -52,3 +52,6 @@ local lspconfig = require('lspconfig')
 lspconfig.html.setup({
   filetypes = { "html", "erb" }
 })
+
+vim.cmd('syntax enable')
+vim.cmd('filetype plugin indent on')

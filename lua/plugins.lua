@@ -73,7 +73,7 @@ local plugins = {
     build = ":TSUpdate",
     config = function()
 	    require('nvim-treesitter.configs').setup({
-        ensure_installed = { "lua", "javascript", "json", "typescript", "ruby" },
+        ensure_installed = { "rust", "lua", "javascript", "json", "typescript", "ruby" },
         auto_install = true,
         indent = {
           enable = true
@@ -277,7 +277,15 @@ local plugins = {
               -- Configuration here, or leave empty to use defaults
           })
       end
-  }
+  },
+
+    { 'rust-lang/rust.vim' },
+    {
+        'mrcjkb/rustaceanvim',
+    dependencies={'mfussenegger/nvim-dap'},
+        version = '^3',
+        ft = { 'rust' },
+     }
 }
 
 return plugins
