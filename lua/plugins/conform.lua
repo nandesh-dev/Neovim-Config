@@ -5,7 +5,10 @@ return {
 		require("conform").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				javascript = { { "prettier" } },
+				css = { "stylelint" },
+				javascript = { "prettier", "rustywind" },
+				javascriptreact = { "prettier", "rustywind" },
+				rust = { "rustfmt" },
 			},
 			format_on_save = {
 				timeout_ms = 500,
