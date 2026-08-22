@@ -105,7 +105,7 @@ vim.lsp.enable({
 	"nil",
 	"lua_ls",
 	"ts_ls",
-	"rust-analyzer",
+	"rust_analyzer",
 	"gopls",
 })
 
